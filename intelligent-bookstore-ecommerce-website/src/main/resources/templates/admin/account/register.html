@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Admin Register Form</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/admin/registerform/css/style.css}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="/admin/registerform/img/logo.png">
+</head>
+<body>
+<img class="wave" src="/admin/registerform/img/wave.png">
+<div class="container">
+
+	<div class="register-content">
+
+		<form id="registerForm" th:object="${staff}" th:action="@{register}" method="post" style="margin-top: 25px;">
+			<img src="/admin/registerform/img/logo.png">
+
+			<h2 class="title">STAFF REGISTER</h2>
+
+			<div class="user-details">
+
+				<div class="input-box">
+					<span class="details">UserName</span>
+					<input type="text" placeholder="Enter your username" th:field="*{staffId}" required>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Full Name</span>
+					<input type="text" placeholder="Enter your name" th:field="*{fullName}" required>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Email</span>
+					<input type="email" placeholder="Enter your email" th:field="*{email}" required>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Phone Number</span>
+					<input type="number" placeholder="Enter your phone" th:field="*{phone}" required>
+				</div>
+
+				<div class="input-box">
+					<span class="details">ID Card</span>
+					<input type="text" placeholder="Enter your ID Card number" required pattern="\d{12}" th:field="*{idCard}" title="ID Card must be 12 digits long">
+				</div>
+
+
+
+
+
+
+
+
+
+
+				<div class="input-box">
+					<span class="details">Address</span>
+					<input type="text" placeholder="Enter your address" th:field="*{address}" required>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Password</span>
+					<input type="password" id="passwordInput" placeholder="Enter your password" th:field="*{pwd}" required>
+					<span class="toggle-password" id="togglePassword1" onclick="togglePassword('passwordInput', 'togglePassword1')"></span>
+					<p id="passwordError" class="error-message" style="display:none; color:red;">Password must include number, lowercase, uppercase, and special character</p>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Confirm Password</span>
+					<input type="password" id="confirmPasswordInput" placeholder="Confirm your password" required>
+					<span class="toggle-password" id="togglePassword2" onclick="togglePassword('confirmPasswordInput', 'togglePassword2')"></span>
+					<p id="confirmPasswordError" class="error-message" style="display:none; color:red;">Passwords do not match</p>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Birthday</span>
+					<input type="date" placeholder="Enter your birthday" th:field="*{birthday}" required>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Gender</span>
+					<div class="gender-details">
+						<div style="display: flex;">
+							<input type="radio" id="male" name="gender" value=0 th:field="*{gender}" required>
+							<label style="margin-left: 5px;" for="male">Male</label>
+							<input style="margin-left: 20px;" type="radio" id="female" name="gender" value=0 th:field="*{gender}" required>
+							<label style="margin-left: 5px;" for="female">Female</label>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<input type="submit" class="btn" value="Register">
+		</form>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="/admin/registerform/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Login Page</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/admin/loginform/css/style.css}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel = "icon" type = "image/png" href="/admin/loginform/img/logo.png">
+</head>
+<body>
+<img class="wave" src="/admin/loginform/img/wave.png">
+<div class="container">
+	<div class="img">
+		<img src="/admin/loginform/img/book1.svg">
+	</div>
+	<div class="login-content">
+		<form id="loginForm" th:action="@{login}" method="post">
+			<!-- Thêm thông báo error và success -->
+			<div th:if="${error}" class="alert alert-danger" style="color: red; text-align: center; margin-bottom: 15px;">
+				<p th:text="${error}"></p>
+			</div>
+			<div th:if="${success}" class="alert alert-success" style="color: green; text-align: center; margin-bottom: 15px;">
+				<p th:text="${success}"></p>
+			</div>
+
+			<img src="/admin/loginform/img/logo.png" style="max-width: 250px; height: 250px; position: relative;">
+			<h2 class="title">Welcome Staff</h2>
+
+			<div class="input-div one">
+				<div class="i">
+					<i class="fas fa-user"></i>
+				</div>
+				<div class="div">
+					<h5>Username</h5>
+					<input type="text" class="input" id="username" name="staffid" required>
+				</div>
+				<span id="usernameError" class="error"></span>
+			</div>
+
+			<div class="input-div pass">
+				<div class="i">
+					<i class="fas fa-lock"></i>
+				</div>
+				<div class="div">
+					<h5>Password</h5>
+					<input type="password" class="input" id="password" name="pass" required>
+				</div>
+				<span id="passwordError" class="error"></span>
+				<span class="toggle-password" onclick="togglePassword()"></span>
+			</div>
+
+			<!-- Thêm checkbox "Remember Me" -->
+			<div class="remember-me">
+				<label for="rememberMe" class="remember-me-label">
+					<input type="checkbox" id="rememberMe" name="rm">
+					<span class="checkmark"></span>
+					Remember Me
+				</label>
+			</div>
+			<div class="account-option">
+				<a href="register">I don't have an account</a>
+				<a href="#">Forgot Password?</a>
+			</div>
+
+			<input type="submit" class="btn" value="Login">
+		</form>
+
+	</div>
+</div>
+<script type="text/javascript" src="/admin/loginform/js/main.js"></script>
+</body>
+</html>

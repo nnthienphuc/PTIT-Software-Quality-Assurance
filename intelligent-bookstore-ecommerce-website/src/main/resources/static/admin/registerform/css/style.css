@@ -1,0 +1,302 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+.container{
+    display: grid;
+    padding: 0 2rem;
+    background: #ffffff; /* Nền trắng cho container */
+    border-radius: 15px; /* Bo tròn góc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    width: 600px; /* Chiều rộng cố định cho container */
+    height: 810px;
+    align-items: center;
+
+}
+
+.img{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.register-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+}
+
+.img img{
+	width: ̀30px;
+}
+
+
+.register-content img{
+    height: 150px;
+    width: 150px;
+}
+
+.register-content h2{
+	margin: 15px 0;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 2.9rem;
+}
+
+.register-content .input-div{
+	position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 10px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.register-content .title {
+    color:  #32be8f;
+	max-width: 700px;
+	width: 100%;
+	font-size: 30px;
+	font-weight:500px ;
+	position: relative;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.register-content .input-div.one ::before{
+	content: ' ';
+	position: absolute;
+	height: 3px;
+	width: 30px;
+	margin-top: 0;
+}
+
+.register-contentc form .user-details{
+	display: flex;
+	flex-wrap: wrap;
+    margin-top: 0px;
+}
+.register-content form .user-details .input-box{
+	width: calc((100%/2 2px));
+	margin: 5px 0 5px 0;
+	margin-left: 0;
+}
+.user-details .input-box .details{
+	font-weight: 500;
+	margin-top:  5px;
+}
+form .gender-details .category {
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+}
+
+.user-details {
+    display: grid; /* Sử dụng lưới để bố trí */
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột */
+    gap: 20px; /* Khoảng cách giữa các cột */
+    justify-items: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+}
+
+
+
+.input-box {
+    display: flex; /* Sử dụng flexbox cho nội dung bên trong */
+    flex-direction: column; /* Đặt hướng theo cột */
+
+}
+
+.input-box input {
+    height: 30px; /* Chiều cao của các input */
+    border-radius: 10px; /* Bo góc */
+    border: 1px solid #ccc; /* Viền cho input */
+    padding: 0 5px; /* Padding bên trong input */
+    font-size: 16px; /* Kích thước chữ trong input */
+}
+
+.gender-details {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo cột */
+    margin: 5px 0; /* Khoảng cách trên và dưới */
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+    flex-direction: column;
+
+}
+
+.gender-title {
+    font-size: 1.2rem; /* Kích thước chữ cho tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+}
+
+.category {
+    display: flex; /* Hiển thị các nhãn theo hàng */
+    gap: 20px; /* Khoảng cách giữa các nhãn */
+}
+
+.category label {
+    display: flex; /* Sử dụng flexbox cho nhãn */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    cursor: pointer; /* Hiệu ứng con trỏ khi hover */
+}
+
+.category input[type="radio"] {
+    display: none; /* Ẩn hộp chọn mặc định */
+}
+
+.dot {
+    height: 20px; /* Chiều cao của hình tròn */
+    width: 20px; /* Chiều rộng của hình tròn */
+    background-color: #ccc; /* Màu nền mặc định */
+    border-radius: 50%; /* Tạo hình tròn */
+    margin-right: 10px; /* Khoảng cách bên phải hình tròn */
+    position: relative; /* Định vị cho hình tròn */
+}
+
+.category input[type="radio"]:checked + .dot {
+    background-color: #32be8f; /* Màu nền khi được chọn */
+}
+
+
+.gender {
+    font-size: 1rem; /* Kích thước chữ cho giới tính */
+	padding: 10px;
+}
+/* CSS cho body */
+body {
+    font-family: 'Poppins', sans-serif; /* Font chữ cho body */
+    background: #f7f7f7; /* Màu nền */
+    margin: 0; /* Xóa khoảng cách mặc định */
+    display: flex; /* Sử dụng flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* CSS cho container */
+
+
+.load-anh {
+    text-align: center; /* Center the content */
+    margin-top: 20px; /* Add some space from the above elements */
+}
+
+.load-anh h1 {
+    font-size: 24px; /* Adjust the font size */
+    color: #333; /* Change text color */
+}
+
+.load-anh img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for aesthetics */
+    margin-top: 10px; /* Space between heading and image */
+}
+.btn {
+    display: block;
+    width: 150px; /* Thay đổi chiều rộng thành 150px */
+    height: 40px; /* Thay đổi chiều cao thành 40px */
+    border-radius: 20px; /* Bo góc nhỏ hơn */
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    background-size: 100%;
+    font-size: 1rem; /* Giảm kích thước chữ */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem auto; /* Tự động căn giữa theo chiều ngang */
+    cursor: pointer;
+    transition: .5s;
+
+}
+
+.btn:hover {
+    background-position: right;
+}
+
+
+.image-label {
+    display: inline-block;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.image-label:hover {
+    background-color: #32be8f;
+}
+
+/* Hide the actual file input element */
+#imageUpload {
+    display: none;
+}
+
+/* Preview image style */
+#previewImage {
+    max-width: 100%;
+    border: 2px solid #32be8f;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Các phong cách khác có thể giữ nguyên */
+.scroll-container {
+    overflow-y: scroll;   /* Cho phép cuộn dọc */
+    border: 1px solid #ccc; /* Đường viền cho vùng cuộn */
+    padding: 10px;        /* Đệm cho vùng cuộn */
+}
+
+.custom-file-upload:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+
+.btn-file{
+    display: inline-block;
+    background-color: #32be8f;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none; /* Ẩn nút mặc định */
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute; /* Đặt vị trí tuyệt đối cho icon */
+
+    cursor: pointer; /* Đổi con trỏ khi hover */
+    font-size: 20px; /* Kích thước của icon */
+}

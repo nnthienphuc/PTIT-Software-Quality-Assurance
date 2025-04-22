@@ -1,0 +1,136 @@
+<div th:fragment="navbar">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/admin/Navbar/css/style.css}">
+    
+    <aside>
+        <div class="top">
+            <div class="logo">
+                <img src="/admin/Navbar/img/logo.png" style="width: 70px; height: 70px; object-fit: contain;">
+                <h2 class="text-muted" style="font-size: 2.2rem; font-weight: 700;">
+                    NAPU<span class="danger">NO</span>
+                </h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>	
+
+        <div class="sidebar" style ="margin-top:-30px;">
+            <a href="/admin/promotion" class="nav-link" data-page="promotion" style ="margin-bottom: 500px;">
+                <span class="material-icons-sharp">sell</span>
+                <h3>Khuyến Mãi</h3>
+            </a>
+            
+        </div>
+    </aside>
+
+    <script th:inline="javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy path hiện tại
+            const currentPath = window.location.pathname;
+            
+            // Lấy tất cả các link trong navbar
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Xóa class active từ tất cả các link
+            function removeAllActive() {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+            
+            // Thêm class active cho link được click
+            navLinks.forEach(link => {
+                // Kiểm tra nếu path hiện tại khớp với href của link
+                if (currentPath === link.getAttribute('href')) {
+                    removeAllActive();
+                    link.classList.add('active');
+                }
+                
+                // Thêm event listener cho click
+                link.addEventListener('click', function(e) {
+                    if (!this.getAttribute('href').includes('logout')) {
+                        removeAllActive();
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Xử lý nút close
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.querySelector('aside').classList.toggle('closed');
+        });
+    </script>
+
+   
+</div>
+ <style>
+        aside {
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .top {
+            padding: 1.2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .logo .danger {
+            color: #e74c3c;
+        }
+
+        .sidebar {
+            padding: 1rem 0;
+          
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            color: #555;
+            text-decoration: none;
+            transition: 0.2s;
+            gap: 1rem;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #f8f9fa;
+            color: #2980b9;
+        }
+
+        .sidebar span {
+            font-size: 1.2rem;
+        }
+
+        .sidebar h3 {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        #close-btn {
+            color: #666;
+            cursor: pointer;
+        }
+    </style>
